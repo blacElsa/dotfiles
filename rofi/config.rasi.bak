@@ -1,0 +1,105 @@
+configuration {
+  modi: [drun, run, window];
+  font: "Roboto 12";
+  display-drun: "";
+  sidebar-mode: true;
+
+  filebrowser {
+    directory: "/home/vvin";
+    sorting-method: "name";
+    directories-first: true;
+  }
+}
+
+@theme "/dev/null"
+
+* {
+  background: #1a1b26;
+  foreground: #c0caf5;
+
+  black:    #15161e;
+  red:      #f7768e;
+  green:    #9ece6a;
+  yellow:   #e0af68;
+  blue:     #7aa2f7;
+  magenta:  #bb9af7;
+  cyan:     #7dcfff;
+  white:    #a9b1d6;
+
+  button: #565f89;
+
+  background-color: @background;
+  text-color: @foreground;
+}
+
+window { width: 980px; }
+prompt { enable: false; }
+
+pfp {
+  width: 115px;
+  expand: false;
+  background-image: url("img/navi.png", height);
+}
+
+entry {
+  placeholder: "Search...";
+
+  expand: true;
+
+  margin: 29px 0 29px 0;
+  padding: 10px 2% 10px 1%;
+  vertical-align: 0.5;
+
+  border: 5px;
+  border-color: @background;
+  border-radius: 7px 25px 7px 25px;
+
+  background-color: @white;
+  text-color: @black;
+  placeholder-color: @button;
+}
+
+inputbar {
+  children: [ pfp, entry ];
+
+  text-color: @foreground;
+  expand: false;
+
+  spacing: 64px;
+  padding: 64px 64px 0 64px;
+
+  // background-image: url("img/517aecb1050e46023903c2d1cc3dcd96.jpeg", width);
+}
+
+listview {
+  columns: 2;
+  lines: 4;
+  cycle: true;
+  dynamic: true;
+  layout: vertical;
+  padding: 16px 32px 32px 32px;
+}
+
+mainbox {
+  children: [ inputbar, listview ];
+  spacing: 2%;
+  layout: horizontal;
+}
+
+element {
+  orientation: vertical;
+  padding: 1.5% 0% 1.5% 0%;
+  border-radius: 5px 5px 5px 5px;
+}
+
+element-text {
+  expand: true;
+  verical-align: 0.1;
+  margin: 0.5% 3% 0 3%;
+  padding: 0% 0% 0% -2.5%;
+  background-color: inherit;
+  text-color: inherit;
+}
+
+element selected { background-color: @button; }
+

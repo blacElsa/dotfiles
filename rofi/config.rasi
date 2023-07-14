@@ -1,0 +1,104 @@
+configuration {
+  font: "Roboto 12";
+  display-drun: "";
+
+  filebrowser {
+    directory: "/home/vvin";
+    sorting-method: "name";
+    directories-first: true;
+  }
+}
+
+@theme "/dev/null"
+
+* {
+  bg: #1a1b26;
+  fg: #c0caf5;
+
+  black:    #15161e;
+  red:      #f7768e;
+  green:    #9ece6a;
+  yellow:   #e0af68;
+  blue:     #7aa2f7;
+  magenta:  #bb9af7;
+  cyan:     #7dcfff;
+  white:    #a9b1d6;
+
+  button: #565f89;
+
+  background-color: @bg;
+  text-color: @fg;
+}
+
+window { width: 840px; }
+prompt { enable: false; }
+
+pfp {
+  width: 235px;
+  expand: false;
+  background-image: url("img/Thumbnails-98.png", width);
+}
+
+entry {
+  font: "Roboto 14";
+  placeholder: "Search...";
+  cursor: text;
+
+  expand: true;
+
+  margin: 5px 0 5px 0;
+  padding: 10px 2% 4px 0%;
+  vertical-align: 0.5;
+
+  border: 0 solid 0 solid 2px solid 0 solid;
+  border-color: @cyan;
+
+  background-color: @bg;
+  text-color: @cyan;
+  placeholder-color: @button;
+}
+
+inputbar {
+  children: [ pfp, entry ];
+
+  text-color: @fg;
+  expand: false;
+
+  spacing: 15px;
+  padding: 64px 64px 0 64px;
+
+  // background-image: url("img/517aecb1050e46023903c2d1cc3dcd96.jpeg", width);
+}
+
+listview {
+  columns: 2;
+  lines: 4;
+  cycle: true;
+  dynamic: true;
+  layout: vertical;
+  padding: 16px 32px 32px 32px;
+}
+
+mainbox {
+  children: [ inputbar, listview ];
+  spacing: 2%;
+  layout: horizontal;
+}
+
+element {
+  orientation: vertical;
+  padding: 1.5% 0% 1.5% 0%;
+  border-radius: 5px 5px 5px 5px;
+}
+
+element-text {
+  expand: true;
+  verical-align: 0.1;
+  margin: 0.5% 3% 0 3%;
+  padding: 0% 0% 0% -2.5%;
+  background-color: inherit;
+  text-color: @white;
+}
+
+element selected { background-color: @button; }
+
